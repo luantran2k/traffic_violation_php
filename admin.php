@@ -36,7 +36,7 @@ function load_data(search)
 </script>
 
 <body>
-    <?php include "test2.php" ?>
+    <?php include "header.php" ?>
     <?php if($level != 2) {echo "<script>window.location.href = './index.php';</script>";}?>
     <div style="margin-top: 100px; min-height: 400px;" id="main" class="container">
         <div class="row">
