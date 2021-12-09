@@ -36,19 +36,6 @@
 </html>
 <script>
 $(document).ready(function(){
-	function load_data(query)
-	{
-		$.ajax({
-			url:"./php/search_violation.php",
-			method:"post",
-			data:{query:query},
-			success:function(data)
-			{
-				$('#result').html(data);
-			}
-		});
-	}
-	
 	$('#search_text').keyup(function(){
 		var search = $(this).val();
 		if(search != '')
@@ -61,4 +48,10 @@ $(document).ready(function(){
 		}
 	});
 });
+function load_data(query)
+	{
+		$.get("./php/search_violation.php", {query:query}, function(data) {
+			$('#result').html(data);
+		})
+	}
 </script>

@@ -1,9 +1,9 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "viphamgiaothong");
 $output = '';
-if(isset($_POST["query"]))
+if(isset($_GET["query"]))
 {
-	$search = mysqli_real_escape_string($connect, $_POST["query"]);
+	$search = mysqli_real_escape_string($connect, $_GET["query"]);
 	$query = "
 	SELECT * FROM vipham 
 	WHERE nguoi_vi_pham LIKE '%".$search."%'
