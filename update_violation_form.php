@@ -6,16 +6,16 @@
     $row = mysqli_fetch_assoc($result);
 
     if (isset($_POST['update-violation'])) {
-        $nguoi_vi_pham   = addslashes($_POST['nguoi_vi_pham']);
-        $so_dien_thoai   = addslashes($_POST['so_dien_thoai']);
-        $loai_phuong_tien = addslashes($_POST['loai_phuong_tien']);
-        $bien_so   = addslashes($_POST['bien_so']);
-        $vi_tri_vi_pham   = addslashes($_POST['vi_tri_vi_pham']);
-        $loi_vi_pham      = addslashes($_POST['loi_vi_pham']);
-        $tien_phat   = addslashes($_POST['tien_phat']);
-        $ghi_chu   = addslashes($_POST['ghi_chu']);
-        $ngay_vi_pham      = addslashes($_POST['ngay_vi_pham']);
-        $trang_thai      = addslashes($_POST['trang_thai']);
+        $nguoi_vi_pham   = ($_POST['nguoi_vi_pham']);
+        $so_dien_thoai   = ($_POST['so_dien_thoai']);
+        $loai_phuong_tien = ($_POST['loai_phuong_tien']);
+        $bien_so   = ($_POST['bien_so']);
+        $vi_tri_vi_pham   = ($_POST['vi_tri_vi_pham']);
+        $loi_vi_pham      = ($_POST['loi_vi_pham']);
+        $tien_phat   = ($_POST['tien_phat']);
+        $ghi_chu   = ($_POST['ghi_chu']);
+        $ngay_vi_pham      = ($_POST['ngay_vi_pham']);
+        $trang_thai      = ($_POST['trang_thai']);
 
         $sql2 = "UPDATE vipham SET nguoi_vi_pham='$nguoi_vi_pham', so_dien_thoai='$so_dien_thoai', loai_phuong_tien='$loai_phuong_tien', bien_so='$bien_so', vi_tri_vi_pham='$vi_tri_vi_pham', loi_vi_pham='$loi_vi_pham', tien_phat=$tien_phat, ghi_chu='$ghi_chu', ngay_vi_pham='$ngay_vi_pham', trang_thai='$trang_thai' WHERE id_bienban=".$this_id;
         mysqli_query($conn, $sql2);

@@ -27,18 +27,12 @@
 <script>
 $(document).ready(function(){
     setEventItem();
-	function load_data_search(query)
+	function load_data_search(search)
 	{
-		$.ajax({
-			url:"./php/search_law.php",
-			method:"get",
-			data:{query:query},
-			success:function(data)
-			{
-				$('#search-res').html(data);
-                setEventItem();
-			}
-		});
+        $.get("./php/search_law.php", {query:search}, function(data) {
+            $('#search-res').html(data);
+             setEventItem();
+        })
 	}
 	$('#search-law-input').keyup(function(){
 		let search = $(this).val();
