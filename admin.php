@@ -26,6 +26,16 @@ $(document).ready(function(){
 			load_data('');			
 		}
 	});
+    $('#export').click(function() {
+        var thang = $('#thang').val();
+        if(thang != null) {
+            console.log(thang);
+            window.location = `./php/export.php?thang=${thang}`;  
+        }
+        else {
+            alert("Mời chọn tháng");
+        }
+    })
 });
 function load_data(search)
 {
@@ -45,7 +55,29 @@ function load_data(search)
                     Thêm vi phạm
                 </button>
             </div>
-            <div class="col-6"></div>
+            <div class="col-2">
+            <select id="thang" class="form-select" aria-label="Default select example">
+                <option value="0" disabled selected>Tháng</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            </div>
+            <div class="col-2 text-left">
+                <button id="export" type="button" class="btn btn-outline-primary mb-3">
+                    Xuất file excel
+                </button>
+            </div>
+            <div class="col-2"></div>
             <div class="col-4">
             <input type="text" name="search_text" id="search_text" placeholder="Nhập tên/ Số điện thoại/ Biển số xe để tìm kiếm" class="form-control" />
             </div>
