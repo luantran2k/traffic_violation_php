@@ -33,7 +33,7 @@
                     <h4 class="mt-5">Tin được xem nhiều</h4>
                     <div class="hot-news">
                         <div class="hot-new my-3">
-                            <a href="./new-detail.php">
+                            <a href="./new-detail.php?this_id=1">
                                 <h5 class="text-dark fs-6">Bảo đảm thuận tiện nhất cho hành khách đến trải nghiệm tuyến
                                     đường
                                     sắt Cát Linh - Hà
@@ -42,25 +42,25 @@
                             <p style="font-size: 12px;">Thời gian: 12:20 P.M GMT+7</p>
                         </div>
                         <div class="hot-new my-3">
-                            <a href="./new-detail.php">
+                            <a href="./new-detail.php?this_id=1">
                                 <h5 class="text-dark fs-6">Công ty Metro Hanoi cho mượn chỗ đỗ xe miễn phí dịp cuối tuần</h5>
                             </a>
                             <p style="font-size: 12px;">Thời gian: 12:20 P.M GMT+7</p>
                         </div>
                         <div class="hot-new my-3">
-                            <a href="./new-detail.php">
+                            <a href="./new-detail.php?this_id=1">
                                 <h5 class="text-dark fs-6">Hà Nội cấm xe máy sau 2025, người dân đi lại thế nào?</h5>
                             </a>
                             <p style="font-size: 12px;">Thời gian: 12:20 P.M GMT+7</p>
                         </div>
                         <div class="hot-new my-3">
-                            <a href="./new-detail.php">
+                            <a href="./new-detail.php?this_id=1">
                                 <h5 class="text-dark fs-6">Hà Nội đầu tư gần 2.000 tỷ đồng để giảm thiểu ùn tắc giao thông</h5>
                             </a>
                             <p style="font-size: 12px;">Thời gian: 12:20 P.M GMT+7</p>
                         </div>
                         <div class="hot-new my-3">
-                            <a href="./new-detail.php">
+                            <a href="./new-detail.php?this_id=1">
                                 <h5 class="text-dark fs-6">Xe tải đấu đầu ô tô BMW, tiếp tục tông đổ tường trường tiểu học ở Hà Nội</h5>
                             </a>
                             <p style="font-size: 12px;">Thời gian: 12:20 P.M GMT+7</p>
