@@ -49,9 +49,9 @@ $(document).ready(function(){
 	});
 });
 function load_data(search)
-	{
-		$.get("./php/search_violation.php", {query:search}, function(data) {
-			$('#result').html(data);
-		})
-	}
+{
+	$.get("./php/search_violation.php", {query:search}, function(data) {
+		$('#result').html(data);
+	})
+}
 </script>

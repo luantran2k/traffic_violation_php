@@ -12,10 +12,6 @@
     }
 ?>
 <Style>
-    #header {
-        background-color: red !important;
-    }
-
     .navbar li a {
         color: rgb(32, 32, 32) !important;
         font-size: 16px;
@@ -85,7 +81,7 @@
                     <a href="./register.php" class="btn btn-outline-primary" style="color: #0d6efd !important;">Đăng
                         ký</a>
                 </li>
-                <li id="user-icon" class="nav-item dropdown" style="display: <?php echo $isLogin==0 ? "none" : "block" ?>;">
+                <li id="user-icon" class="nav-item dropdown" style="display: <?php echo $isLogin==0 ? "none" : "block"?>;">
                     <div class="disable">
                         <ion-icon name="person-outline"
                             style="font-size: 24px; transform: translateY(40%); margin-left: 20px;"></ion-icon>
