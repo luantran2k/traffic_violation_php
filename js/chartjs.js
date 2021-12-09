@@ -16,6 +16,11 @@ function load_data() {
 };
 load_data();
 setTimeout(() => {
+    drawLineChart();
+    drawPieChar();
+}, 100);
+
+function drawLineChart() {
     const ctx = document.getElementById('lineChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
@@ -39,9 +44,7 @@ setTimeout(() => {
             }
         }
     });
-    drawPieChar();
-}, 100);
-
+}
 
 function drawPieChar() {
     var data = {
