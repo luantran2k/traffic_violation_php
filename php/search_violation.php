@@ -27,6 +27,7 @@ if(mysqli_num_rows($result) > 0)
 							<th>Lỗi vi phạm</th>
 							<th>Biển số xe</th>
 							<th>Số điện thoại</th>
+							<th></th>
 						</tr>';
 	while($row = mysqli_fetch_array($result))
 	{
@@ -37,6 +38,7 @@ if(mysqli_num_rows($result) > 0)
 				<td>'.$row["loi_vi_pham"].'</td>
 				<td>'.$row["bien_so"].'</td>
 				<td>'.$row["so_dien_thoai"].'</td>
+				<th><li data-bs-toggle="modal" data-bs-target="#detaiModal" class="chi-tiet" value="'.$row["id_bienban"].'" style="color: #0d6efd; cursor: pointer; list-style-type: none;">Chi tiết</li></th>
 			</tr>
 		';
 	}

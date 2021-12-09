@@ -24,9 +24,22 @@
 			</div>
 			<br />
 			<table id="result" class="table table-striped table-bordered"></table>
+			<div id="vio-detail"></div>
         </div>
-        
     </div>
+		<!-- Modal -->
+	<div class="modal fade" id="detaiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-body">
+			...
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+		</div>
+		</div>
+	</div>
+	</div>
     <div include-html="./html/footer.html" id="footer"></div>
     <script src="./js/include_html.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -44,7 +57,8 @@ $(document).ready(function(){
 		}
 		else
 		{
-			load_data('*');			
+			load_data('*');	
+			$('#vio-detail').html("");		
 		}
 	});
 });
@@ -52,6 +66,19 @@ function load_data(search)
 {
 	$.get("./php/search_violation.php", {query:search}, function(data) {
 		$('#result').html(data);
+		setEventItem();
 	})
+}
+function setEventItem() {
+        $('.chi-tiet').click(function() {
+		getVioDetail($(this).val());
+		console.log($(this).val())
+    })
+}
+
+function getVioDetail(id) {
+    $.get("./php/violation_detail.php", {query: id}, function(data){
+        $(".modal-body").html(data)
+    })
 }
 </script>

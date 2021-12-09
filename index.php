@@ -19,7 +19,7 @@
     <div style="margin-top: 100px;" id="main">
         <div class="container">
             <canvas id="lineChart" height="100px"></canvas>
-            <p class="text-center fs-3 text-secondary py-5">Số vụ tai nạn theo tháng</p>
+            <p class="text-center fs-3 text-secondary py-5">Số vụ vi phạm theo tháng</p>
             <div class="row mt-5">
                 <div class="col-lg-4">
                     <h4>Loại phương tiện</h4>
