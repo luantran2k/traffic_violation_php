@@ -27,7 +27,7 @@
                         <div style="width: 80%;">
                             <canvas id="piechart">
                             </canvas>
-                            <p class="text-center mt-2">Theo loại phương tiện T11-2021 (%)</p>
+                            <p class="text-center mt-2">Theo loại phương tiện (%)</p>
                         </div>
                     </div>
                     <h4 class="mt-5">Tin được xem nhiều</h4>
