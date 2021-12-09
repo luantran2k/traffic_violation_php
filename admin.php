@@ -14,6 +14,7 @@
 
 <body>
     <?php include "header.php" ?>
+    <?php if($level != 2) { header('location:./index.php');}?>
     <div style="margin-top: 100px; min-height: 400px;" id="main" class="container">
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#themvipham">
         Thêm vi phạm
@@ -25,6 +26,7 @@
                 <th>Người vi phạm</th>
                 <th>Số điện thoại</th>
                 <th>Biển số xe</th>
+                <th>Loại phương tiện</th>
                 <th>Lỗi vi phạm</th>
                 <th>Ngày vi phạm</th>
             </tr>
@@ -33,7 +35,7 @@
             <?php 
                 include "./php/connect.php";
 
-                $sql = "SELECT * FROM vipham";
+                $sql = "SELECT * FROM vipham ORDER BY ngay_vi_pham DESC";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_array($result)) {
             ?>
@@ -41,6 +43,7 @@
                     <td><?php echo $row['nguoi_vi_pham'] ?></td>
                     <td><?php echo $row['so_dien_thoai'] ?></td>
                     <td><?php echo $row['bien_so'] ?></td>
+                    <td><?php echo $row['loai_phuong_tien'] ?></td>
                     <td><?php echo $row['loi_vi_pham'] ?></td>
                     <td><?php echo $row['ngay_vi_pham'] ?></td>
                     <td>

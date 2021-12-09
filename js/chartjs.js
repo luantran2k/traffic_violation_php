@@ -1,10 +1,17 @@
 // Line chart
 var result;
+var resPieChart;
 function load_data() {
     $.get("./php/count_violation.php", function (data) {
         result = data.split(" ");
         result.pop();
         console.log(result);
+    });
+    $.get("./php/countByVehicle.php", function (data) {
+        console.log(data)
+        resPieChart = data.split(" ");
+        resPieChart.pop();
+        console.log(resPieChart);
     });
 };
 load_data();
@@ -32,74 +39,77 @@ setTimeout(() => {
             }
         }
     });
+    drawPieChar();
 }, 100);
 
-var data = {
-    labels: [
-        "Xe máy",
-        "Ô tô",
-        "Xe tự chế",
-        "Khác"
-    ],
-    datasets: [
-        {
-            data: [60, 30, 8, 2],
-            backgroundColor: [
-                "#0d6efd",
-                "#4d94ff",
-                "#8fbcff",
-                "#b6b6b6",
-            ],
-        }]
-};
 
-//Pie chart
-var piectx = document.getElementById("piechart").getContext("2d");
-var pieChart = new Chart(piectx, {
-    type: 'pie',
-    data: data,
-    options: {
-        showAllTooltips: true,
-        animation: {
-            animateRotate: true,
-            animateScale: true
-        },
-        elements: {
-            arc: {
-                borderColor: "#fff"
-            }
-        },
-        title: {
-            display: true,
-            text: 'Theo loại phương tiện (%)',
-            fontSize: 18,
-            padding: 20,
-            fontColor: "#999",
-            fontStyle: 'Normal',
-            fontFamily: "Montserrat",
-            fullWidth: true
-        },
-        legend: {
-            display: true,
-            position: "bottom",
-            labels: {
-                boxWidth: 30,
+function drawPieChar() {
+    var data = {
+        labels: [
+            "Khác",
+            "Ô tô",
+            "Xe máy",
+            "Xe tự chế",
+        ],
+        datasets: [
+            {
+                data: resPieChart,
+                backgroundColor: [
+                    "#8fbcff",
+                    "#4d94ff",
+                    "#0d6efd",
+                    "#b6b6b6",
+                ],
+            }]
+    };
+    //Pie chart
+    var piectx = document.getElementById("piechart").getContext("2d");
+    var pieChart = new Chart(piectx, {
+        type: 'pie',
+        data: data,
+        options: {
+            showAllTooltips: true,
+            animation: {
+                animateRotate: true,
+                animateScale: true
+            },
+            elements: {
+                arc: {
+                    borderColor: "#fff"
+                }
+            },
+            title: {
+                display: true,
+                text: 'Theo loại phương tiện (%)',
+                fontSize: 18,
+                padding: 20,
                 fontColor: "#999",
+                fontStyle: 'Normal',
                 fontFamily: "Montserrat",
                 fullWidth: true
+            },
+            legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                    boxWidth: 30,
+                    fontColor: "#999",
+                    fontFamily: "Montserrat",
+                    fullWidth: true
+                }
+            },
+            tooltips: {
+                enabled: false,
+                bodyFontColor: "#efefef",
+                fontStyle: 'Normal',
+                bodyFontFamily: "Montserrat",
+                cornerRadius: 2,
+                backgroundColor: "#333",
+                xPadding: 7,
+                yPadding: 7,
+                caretSize: 5,
+                bodySpacing: 10
             }
-        },
-        tooltips: {
-            enabled: false,
-            bodyFontColor: "#efefef",
-            fontStyle: 'Normal',
-            bodyFontFamily: "Montserrat",
-            cornerRadius: 2,
-            backgroundColor: "#333",
-            xPadding: 7,
-            yPadding: 7,
-            caretSize: 5,
-            bodySpacing: 10
         }
-    }
-});
+    });
+}
