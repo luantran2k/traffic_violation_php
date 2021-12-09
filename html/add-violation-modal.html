@@ -1,0 +1,74 @@
+<div class="modal fade" id="themvipham" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm vi phạm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="./php/add_violation.php" method="post" id="add-violation-form">
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Tên người vi phạm" name="nguoi_vi_pham"
+                            required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Số điện thoại người vi phạm"
+                            name="so_dien_thoai" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Loại phương tiện" name="loai_phuong_tien"
+                            required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Biển số" name="bien_so" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Vị trí vi phạm" name="vi_tri_vi_pham"
+                            required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Lỗi vi phạm" name="loi_vi_pham" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Tiền phạt" name="tien_phat" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Ghi chú" name="ghi_chu">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="date" class="form-control" placeholder="Ngày vi phạm" name="ngay_vi_pham" required>
+                    </div>
+                    <p>Trạng thái:</p>
+                    <div class="input-group mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai_1"
+                                value="Chưa xử lý" checked>
+                            <label class="form-check-label pe-2" for="trang_thai_1">
+                                Chưa xử lý
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai_2"
+                                value="Đã xử lý">
+                            <label class="form-check-label pe-2" for="trang_thai_2">
+                                Đã xử lý
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai_3"
+                                value="Đang thi hành">
+                            <label class="form-check-label pe-2" for="trang_thai_3">
+                                Đang thi hành
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button name="add-violation" type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
